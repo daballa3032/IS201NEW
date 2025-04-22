@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Joke Simulator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fef6e4;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .joke-box {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 16px;
+      background-color: #ff8906;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e07c07;
+    }
+  </style>
+</head>
+<body>
+  <div class="joke-box">
+    <h1>Random Joke Simulator</h1>
+    <p id="joke">Click the button to get a joke!</p>
+    <button onclick="tellJoke()">Get Joke</button>
+  </div>
+
+  <script>
+    const jokes = [
+      "Why don’t skeletons fight each other? They don’t have the guts.",
+      "Why did the scarecrow win an award? Because he was outstanding in his field.",
+      "What do you call fake spaghetti? An impasta!",
+      "Why don’t scientists trust atoms? Because they make up everything.",
+      "How do you organize a space party? You planet."
+    ];
+
+    function tellJoke() {
+      const randomIndex = Math.floor(Math.random() * jokes.length);
+      document.getElementById('joke').innerText = jokes[randomIndex];
+    }
+  </script>
+</body>
+</html>
